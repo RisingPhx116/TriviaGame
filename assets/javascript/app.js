@@ -1,20 +1,29 @@
-$(document).ready(function() {
-//variable for time in seconds for countdown
-var time = 60;
+$(document).ready(function () {
+//variables for timer
+var seconds = 60;
+var stop = 0;
+var counterStarted = false;
+var counter;
 
-//function to get remaining time
-function timeRemaining(timeEnd) {
-var seconds = Math.floor( (time/1000) % 60 );
-console.log(seconds);
-};
+//variables for right or wrong guess total
+var correct = 0;
+var wrong = 0;
 
-//initialize timer
-function intializeTimer(timeEnd) {
-  var timer = document.getElementById("#timer");
-}
-
-//variable for setInterval
-
-
-
+//function for counter
+function myTimer() {
+  if (counterStarted === false) {
+    counterstarted = true;
+    counter = setInterval(function() {
+      if (seconds <= stop) {
+        document.getElementById("#timer").innerHTML = seconds;
+        seconds--;
+      }
+      else {
+        clearInterval(counter);
+        counterStarted = false;
+        seconds = 60;
+        }
+      },1000)
+    }
+  }
 });
