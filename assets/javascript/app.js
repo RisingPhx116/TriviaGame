@@ -28,14 +28,39 @@ function myTimer() {
         }
       },1000)
     }
-  }
+  };
 
-$("#triviaBox").on("click", function () {
+//function for submitting answers
+function myButton() {
+  right = $("input:checkbox").length;
+  $("#correct").text(right);
+  //if ($("#checkbox").is(":checked")) {
+  //if ($("#checkbox").prop("checked")) {
+  //for (var i = 0; i <=6; i++)
+  //if (document.getElementById("#correct").checked) {
+  // correct = $("#correct").length;
+  //correct++;
+  //console.log("You have " + correct + "right");
+  // else wrong++;
+  //console.log("You have " + wrong + "wrong");
+  console.log(right);
+  clearInterval(counter);
+  counterStarted = false;
+  seconds = 60;
+
+};
+
+$("#questions").on("click", function () {
   myTimer();
 });
 
 $('input[type="checkbox"]').on('change', function() {
     $('input[name="' + this.name + '"]').not(this).prop('checked', false);
 });
+
+$("#button").on("click", function() {
+  myButton();
+});
+
 
 });
