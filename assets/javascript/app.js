@@ -19,7 +19,7 @@ function myTimer() {
         span.innerHTML = seconds;
         //document.getElementById("#timer").innerHTML = seconds;
         seconds--;
-        console.log(seconds);
+        //console.log(seconds);
       }
       else {
         clearInterval(counter);
@@ -32,8 +32,26 @@ function myTimer() {
 
 //function for submitting answers
 function myButton() {
-  right = $("input:checkbox").length;
-  $("#correct").text(right);
+  //grab the line item that is correct
+  //look for attribute of correct
+  //if the attribute of that line item is correct, you need to add to the correct answer count
+
+/*   $("input").each(function(i) {
+    console.log("Value of first condition: " + $(this).attr("data-correct"))
+    console.log("First condition: " + $("li").data("data-correct") === "true");
+    console.log("Second condition: " + $('input[type="checkbox"]').prop("checked"));
+    if (($("input").attr("data-correct") === "true" && ($('input[type="checkbox"]').prop("checked")))) {
+    //if (this.data-correct === "true") {
+      correct = $("input:checked").length;
+      console.log("Correct: " + correct);
+    }
+    else {
+       wrong = 6 - correct;
+       console.log("Wrong: " + wrong);
+    }
+  }); */
+/*   right = $("input:checkbox").length;
+  $("#correct").text(right); */
   //if ($("#checkbox").is(":checked")) {
   //if ($("#checkbox").prop("checked")) {
   //for (var i = 0; i <=6; i++)
@@ -43,7 +61,7 @@ function myButton() {
   //console.log("You have " + correct + "right");
   // else wrong++;
   //console.log("You have " + wrong + "wrong");
-  console.log(right);
+  //console.log(right);
   clearInterval(counter);
   counterStarted = false;
   seconds = 60;
@@ -61,6 +79,5 @@ $('input[type="checkbox"]').on('change', function() {
 $("#button").on("click", function() {
   myButton();
 });
-
 
 });
